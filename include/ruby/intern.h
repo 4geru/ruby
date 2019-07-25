@@ -725,6 +725,7 @@ const char *ruby_signal_name(int);
 void ruby_default_signal(int);
 /* sprintf.c */
 VALUE rb_f_sprintf(int, const VALUE*);
+//VALUE rb_f_hello(const VALUE*);
 PRINTF_ARGS(VALUE rb_sprintf(const char*, ...), 1, 2);
 VALUE rb_vsprintf(const char*, va_list);
 PRINTF_ARGS(VALUE rb_str_catf(VALUE, const char*, ...), 2, 3);

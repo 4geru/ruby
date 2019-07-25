@@ -8866,6 +8866,12 @@ rb_f_gets(int argc, VALUE *argv, VALUE recv)
     return rb_funcallv(argf, idGets, argc, argv);
 }
 
+static  VALUE
+rb_f_hello(VALUE self){
+    fprintf(stdout, "%s\n", "Hello");
+    return self;
+}
+
 /*
  *  call-seq:
  *     ARGF.gets(sep=$/ [, getline_args])     -> string or nil
@@ -13375,6 +13381,8 @@ Init_IO(void)
     rb_define_global_const("STDOUT", rb_stdout);
     /* Holds the original stderr */
     rb_define_global_const("STDERR", rb_stderr);
+
+    rb_define_global_function("hello", rb_f_hello, 0);
 
 #if 0
     /* Hack to get rdoc to regard ARGF as a class: */

@@ -97,6 +97,10 @@ class TestIO < Test::Unit::TestCase
     r&.close
   end
 
+  def test_hello
+    assert_in_out_err([], "hello", ["Hello"])
+  end
+
   def test_pipe
     r, w = IO.pipe
     assert_instance_of(IO, r)
